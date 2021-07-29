@@ -4,7 +4,8 @@ const axios = require('axios').default;
 
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
- 
+
+
 function Login() {
  
   const [email, setEmail] = useState('');
@@ -12,6 +13,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState(null);
+
+  //revisar error de localstorage con nextjs (dynamic)
  
   const handleSubmit = () => {
     setLoading(true);
@@ -20,19 +23,24 @@ function Login() {
       email: email,
       password: password
     }
-
+    
     axios.post(`http://challenge-react.alkemy.org/?email=${data.email}&password=${data.password}`).then(res => {
       setEmail('');
       setPassword('');
       setLoading(false);
       setData(res.data.token);
-      localStorage.setItem(token, data);
+      localStorage.setItem('token', JSON.stringify(res.data.token));
+      console.log("data", JSON.parse(data))
       return
+      //revisar porque da excepción
     }).catch(err => {
       setLoading(false);
       setIsError(true);
+      console.log("error", err)
+      console.log("data", localStorage.getItem('token'))
     });
   }
+
  
   return (
     <div className="container p-3">
