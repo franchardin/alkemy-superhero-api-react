@@ -25,3 +25,8 @@ try {
 } catch(e) {
     fs.mkdirSync('cache')
 }
+
+fs.writeFile('cache/data.js', fileContents, function(err){
+    if (err) return console.log(err)
+    console.log('Posts cached')
+})
