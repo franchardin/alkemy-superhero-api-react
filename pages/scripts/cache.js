@@ -12,10 +12,16 @@ function getPosts(){
         const matterResult = matter(fileContents)
         return {
             id,
-            name
+            name: matterResult.data.name
         }
     })
     return JSON.stringify(posts)
 }
 
-const fileContents = 
+const fileContents = `export const posts =${getPosts()}`
+
+try {
+    fs.readdirSync('cache')
+} catch(e) {
+    fs.mkdirSync('cache')
+}
