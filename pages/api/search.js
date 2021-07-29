@@ -1,5 +1,5 @@
 import {getSortedPostsData} from '../../lib/posts'
-import post from '../scripts/cache/data'
+import post from '../scripts/data'
 
 const posts = process.env.NODE_ENV === 'develop' ? require('../scripts/cache/data').posts : getSortedPostsData()
 
