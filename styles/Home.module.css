@@ -108,8 +108,16 @@
   line-height: 1.5;
 }
 
-h1.title span{
+h1.title span a{
   color: #0070f3;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+h1.title span a:hover{
+  text-shadow: #0070f3 0  0px 10px;
+  text-decoration: none;
+  transform: scale(2,2);
 }
 
 .logo {

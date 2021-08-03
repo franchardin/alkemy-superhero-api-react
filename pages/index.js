@@ -28,16 +28,20 @@ export default function Home() {
         })
     }
 
+    
   function doSearch(e) {
-    const searchInput = document.querySelector("#inputSearch").value  
-    console.log(searchInput)
-    const searchHeroName = e.target.value;
+   
+      const searchInput = document.querySelector("#inputSearch").value  
+      console.log(searchInput)
+      const searchHeroName = e.target.value;
 
-        setSearchText(searchHeroName)
+      setSearchText(searchHeroName)
+        if (searchHeroName.length === 0) {
+          setSuperheroData([]);
+        }
         if (searchHeroName.length > 2) {
             searchHero();
         }
-    
   }
   return (
     <div className={styles.container}>
@@ -45,13 +49,14 @@ export default function Home() {
       <main className={styles.main}>
       
         <h1 className={styles.title}>
-          Welcome to the <span>Superhero</span> team builder
+          Welcome to the <span><a href="https://superheroapi.com/" target="_blank">Superhero</a></span> team builder
         </h1>
 
         <p className={styles.description}>
           You can start by adding someone to your team
         </p>
         <Searchbar doSearch={doSearch} searchHero={searchHero} />
+        
         <DisplayHeroes superheroData={superheroData}/>  
         <div className={styles.grid}>
           <DisplayTeam  />

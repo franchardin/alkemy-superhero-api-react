@@ -4,6 +4,8 @@
   margin: 20px;
   text-align: center;
   box-sizing: border-box;
+  display: flex;
+  position: relative;
 }
 
 .heroCard img {
@@ -23,3 +25,29 @@
   text-align: left;
 }
 
+.left, .right {
+  position: absolute;
+  font-size: 5rem;
+  top: 50%;
+  padding: 15px;
+  width: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+.left {
+  left: 0;
+}
+
+.left:hover {
+  display: block;
+}
+
+.right {
+  right: 0;
+  color: #0070f3;
+}
+
+.right:hover {
+  display: block;
+}

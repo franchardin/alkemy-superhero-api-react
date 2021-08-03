@@ -40,8 +40,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Important data
 <a href="https://superheroapi.com/">https://superheroapi.com/</a>
-<a href=""></a>
-<a href=""></a>
 # Data
 api number
 10159471963432710
