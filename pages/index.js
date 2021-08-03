@@ -43,6 +43,7 @@ export default function Home() {
     <div className={styles.container}>
       <Navbar />
       <main className={styles.main}>
+      
         <h1 className={styles.title}>
           Welcome to the <span>Superhero</span> team builder
         </h1>
@@ -51,12 +52,7 @@ export default function Home() {
           You can start by adding someone to your team
         </p>
         <Searchbar doSearch={doSearch} searchHero={searchHero} />
-        
-        
-        <div className={styles.grid}>
-          <DisplayHeroes superheroData={superheroData}/>  
-        </div>
-
+        <DisplayHeroes superheroData={superheroData}/>  
         <div className={styles.grid}>
           <DisplayTeam  />
         </div>

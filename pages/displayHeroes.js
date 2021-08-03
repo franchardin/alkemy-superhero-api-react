@@ -5,25 +5,14 @@ import DisplayHero from './displayHero'
 
 export default function displayHeroes(props) {
 
-  const { superheroData } = props
+  const { superheroData } = props;
   
-  console.log("Data from props got to displayheros!", superheroData)
-  let superheroDataString = JSON.stringify({superheroData});
-  console.log("Superherostring", typeof superheroDataString);
-  
-  let superheroDataArray = JSON.parse(superheroDataString);
-  console.log("SuperheroObj", typeof superheroDataArray);
-  
-
-  let superheroDataResultsArray = superheroData;
-  console.log("Results Array?", typeof superheroDataResultsArray);
-  console.log("Results Array?", superheroDataResultsArray);
-  return (
-      <div>
-        {superheroDataResultsArray.map( () => { 
-          <DisplayHero data={superheroData}/>
-        })}
-        <DisplayHero />
+  console.log("sh data", superheroData)
+    return (
+      <div className={styles.heroesContainer}>
+            {superheroData.map(superhero => 
+              <DisplayHero data={superhero} />
+            )}
       </div>
   )
 }

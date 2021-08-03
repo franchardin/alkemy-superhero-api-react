@@ -29,7 +29,7 @@ export default function Searchbar(props) {
     }*/
 
   return (
-    <div className={styles.search}>
+    <div className={styles.searchbar}>
         <input 
             id="inputSearch" 
             className={styles.searchInput} 

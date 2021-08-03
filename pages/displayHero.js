@@ -5,25 +5,23 @@ import styles from '../styles/DisplayHero.module.css'
 export default function displayHero(props) {
 
   const { data } = props;
-
   console.log("!!!!!!!From display hero", data)
 
   return (
       <div className={styles.heroCard}>
         <div className="left"></div>
         <div>
-          
-        <img src="https://www.superherodb.com/pictures2/portraits/10/100/1111.jpg"></img>
+        <img src={data.image.url} alt="`${data.name}-image`"></img>
         </div>
         <div className="right"></div>
-        <h1>Name of super</h1>
+        <h1>{data.name}</h1>
         <div className={styles.heroPowerstats}>
-          <div>intelligence: 88</div>
-          <div>strength: 11</div>
-          <div>speed: 33</div>
-          <div>durability: 40</div>
-          <div>power: 34</div>
-          <div>combat: 90</div>
+          <div>intelligence: {data.powerstats.intelligence}</div>
+          <div>strength: {data.powerstats.strength}</div>
+          <div>speed: {data.powerstats.speed}</div>
+          <div>durability: {data.powerstats.durability}</div>
+          <div>power: {data.powerstats.power}</div>
+          <div>combat: {data.powerstats.combat}</div>
         </div>
       </div>
   )

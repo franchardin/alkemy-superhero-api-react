@@ -14,7 +14,7 @@ export default function Navbar() {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
       </Head>
         <navbar>
-            <div>I'm not a navbar</div>
+            <h3>Alkemy's React challenge</h3>
         </navbar>
     </div>
   )
