@@ -4,7 +4,8 @@ import styles from '../styles/DisplayHero.module.css'
 
 export default function displayHero(props) {
 
-  const { data } = props
+  const { data } = props;
+
   console.log("!!!!!!!From display hero", data)
 
   return (

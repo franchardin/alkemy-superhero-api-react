@@ -15,14 +15,15 @@ export default function displayHeroes(props) {
   console.log("SuperheroObj", typeof superheroDataArray);
   
 
-  let superheroDataResultsArray = superheroData.data.results;
+  let superheroDataResultsArray = superheroData;
   console.log("Results Array?", typeof superheroDataResultsArray);
   console.log("Results Array?", superheroDataResultsArray);
   return (
       <div>
-        {superheroDataResultsArray.map(superhero => {
-          <DisplayHero data={superhero} />
+        {superheroDataResultsArray.map( () => { 
+          <DisplayHero data={superheroData}/>
         })}
+        <DisplayHero />
       </div>
   )
 }

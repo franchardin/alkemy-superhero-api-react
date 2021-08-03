@@ -17,9 +17,9 @@ export default function Home() {
         .then((res) => {
            // Code for handling the response
            
-            let response = JSON.stringify(res);
+            let response = JSON.stringify(res.data.results);
             //setSuperheroData(response);
-            setSuperheroData(res);
+            setSuperheroData(JSON.parse(response));
             
         })
         .catch((error) => {
