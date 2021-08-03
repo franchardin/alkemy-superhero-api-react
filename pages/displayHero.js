@@ -11,6 +11,7 @@ export default function displayHero(props) {
       <div className={styles.heroCard}>
         <div className="left"></div>
         <div>
+          
         <img src="https://www.superherodb.com/pictures2/portraits/10/100/1111.jpg"></img>
         </div>
         <div className="right"></div>

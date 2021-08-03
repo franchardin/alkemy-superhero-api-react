@@ -16,10 +16,11 @@ export default function Home() {
         axios.get(`https://superheroapi.com/api/10159471963432710/search/${searchText}/`)
         .then((res) => {
            // Code for handling the response
-            let data = JSON.stringify(res);
-            console.log("JSONED DATAAAA", data);
-            setSuperheroData(data);
-            console.log("SUPERHERO DATA", this.superheroData);
+           
+            let response = JSON.stringify(res);
+            //setSuperheroData(response);
+            setSuperheroData(res);
+            
         })
         .catch((error) => {
             //alert("Api call error: ", error)
