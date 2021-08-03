@@ -1,5 +1,6 @@
 //import Image from 'next/image'
 import React, { useState } from 'react'
+const axios = require('axios').default;
 import styles from '../styles/Home.module.css'
 import DisplayHero from './displayHero'
 import DisplayHeroes from './displayHeroes'
@@ -8,13 +9,33 @@ import Navbar from './nabvar'
 import Searchbar from './searchbar'
 
 export default function Home() {
-  
-  const [name, setName] = useState('Frankie')
-  console.log(name)
+  const [searchText, setSearchText] = useState('');
+  const [superheroData, setSuperheroData] = useState([]);
 
-  function doSearch() {
+    function searchHero() {
+        axios.get(`https://superheroapi.com/api/10159471963432710/search/${searchText}/`)
+        .then((res) => {
+           // Code for handling the response
+            let data = JSON.stringify(res);
+            console.log("JSONED DATAAAA", data);
+            setSuperheroData(data);
+            console.log("SUPERHERO DATA", this.superheroData);
+        })
+        .catch((error) => {
+            //alert("Api call error: ", error)
+            // Code for handling the error
+        })
+    }
+
+  function doSearch(e) {
     const searchInput = document.querySelector("#inputSearch").value  
     console.log(searchInput)
+    const searchHeroName = e.target.value;
+
+        setSearchText(searchHeroName)
+        if (searchHeroName.length > 2) {
+            searchHero();
+        }
     
   }
   return (
@@ -28,15 +49,15 @@ export default function Home() {
         <p className={styles.description}>
           You can start by adding someone to your team
         </p>
-        <Searchbar />
+        <Searchbar doSearch={doSearch} searchHero={searchHero} />
         
         
         <div className={styles.grid}>
-          <DisplayHeroes />  
+          <DisplayHeroes superheroData={superheroData}/>  
         </div>
 
         <div className={styles.grid}>
-          <DisplayTeam />
+          <DisplayTeam  />
         </div>
       </main>
 

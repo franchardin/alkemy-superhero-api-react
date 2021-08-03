@@ -2,7 +2,10 @@ import Head from 'next/head'
 import React, { useState } from 'react'
 import styles from '../styles/DisplayHero.module.css'
 
-export default function displayHero() {
+export default function displayHero(props) {
+
+  const { data } = props
+  console.log("!!!!!!!From display hero", data)
 
   return (
       <div className={styles.heroCard}>
