@@ -1,0 +1,27 @@
+.heroCard {
+  box-shadow: #dadada 0 0 15px 4px;
+  padding: 18px 15px 5px;  
+  text-align: center;
+}
+
+.heroCard img {
+  width: 180px;
+  height: auto;
+}
+
+.heroCard h1 {
+  padding-top: 4px;
+  margin-bottom: 2px !important;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.heroCard p {
+
+}
+
+.heroPowerstats {
+  margin-bottom: 5px;
+  text-align: left;
+}
+

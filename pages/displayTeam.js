@@ -1,0 +1,14 @@
+import Head from 'next/head'
+import React, { useState } from 'react'
+import styles from '../styles/DisplayTeam.module.css'
+
+export default function displayTeam() {
+
+  return (
+      <div className={styles.teamContainer}>
+        Team display here
+      </div>
+  )
+}
+    
+    
