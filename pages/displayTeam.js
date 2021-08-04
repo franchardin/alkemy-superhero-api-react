@@ -6,7 +6,6 @@ export default function displayTeam(props) {
 
   return (
       <div className={styles.teamContainer}>
-        Team display here
       </div>
   )
 }

@@ -1,10 +1,10 @@
 .nav{
-  background-color: rgb(235, 88, 88);
+  background-color: #eb5858;
   width: 100%;
   margin: 0;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .nav h3 {

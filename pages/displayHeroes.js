@@ -9,10 +9,15 @@ export default function displayHeroes(props) {
   
   console.log("sh data", superheroData)
     return (
-      <div className={styles.heroesContainer}>
-            {superheroData.map(superhero => 
-              <DisplayHero data={superhero} />
-            )}
-      </div>
+      <>
+      {superheroData && superheroData.length > 0 ? 
+        <div className={styles.heroesContainer}>
+          {superheroData.map(superhero => 
+            <DisplayHero data={superhero} />
+          )}
+        </div>
+        : <></>
+        }
+      </>
   )
 }
