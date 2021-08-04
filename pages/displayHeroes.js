@@ -7,7 +7,6 @@ export default function displayHeroes(props) {
 
   const { superheroData } = props;
   
-  console.log("sh data", superheroData)
     return (
       <>
       {superheroData && superheroData.length > 0 ? 
